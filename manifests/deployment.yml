@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "azurek8slabaks"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "azurek8slabaks"
+    spec:
+      containers:
+        - name: "azurek8slabaks"
+          image: "azurek8slabcr.azurecr.io/azurek8slabaks"
+          ports:
+          - containerPort: 80
