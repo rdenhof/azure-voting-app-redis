@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "azurek8slabaks"
+    labels:
+        app: "azurek8slabaks"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: azurek8slabaks032d-azurek8slabaks.311f43bc0a594c4080ca.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "azurek8slabaks"
+                servicePort: 80
